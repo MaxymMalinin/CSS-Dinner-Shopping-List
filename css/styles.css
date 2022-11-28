@@ -1,0 +1,142 @@
+@charset "UTF-8";
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  background-color: #3b3f45;
+  line-height: 1.1716;
+  color: #ffffff;
+}
+
+.Header {
+  background-color: #4a4f56;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 19px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: #ff8984;
+}
+
+.Heading {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.SubHeading {
+  font-size: 16px;
+  line-height: 1.171875;
+  margin-top: 4px;
+}
+
+.List {
+  margin-top: 20px;
+  max-width: 534px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.List_item {
+  background-color: #88839e;
+  transition: background-color 0.1s ease-in;
+  border-top: 3px solid #88839e;
+  border-bottom: 3px solid #88839e;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.List_item:nth-child(1) {
+  z-index: 9;
+}
+.List_item:nth-child(2) {
+  z-index: 8;
+}
+.List_item:nth-child(3) {
+  z-index: 7;
+}
+.List_item:nth-child(4) {
+  z-index: 6;
+}
+.List_item:nth-child(5) {
+  z-index: 5;
+}
+.List_item:nth-child(6) {
+  z-index: 4;
+}
+.List_item:nth-child(even) {
+  background-color: #7a7593;
+  border-top: 3px solid #7a7593;
+  border-bottom: 3px solid #7a7593;
+}
+.List_item:hover {
+  background-color: #625e77;
+  border-color: #ffffff;
+}
+
+.Checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 19px;
+  height: 19px;
+  margin-right: 16px;
+  background-color: #ffffff;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.Checkbox:checked {
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.Checkbox:checked + .Food {
+  -webkit-text-decoration: line-through 1px;
+          text-decoration: line-through 1px;
+  color: #9b96ac;
+}
+.Checkbox:checked + .Food + .Notes {
+  -webkit-text-decoration: line-through 1px;
+          text-decoration: line-through 1px;
+  color: #9b96ac;
+}
+
+label.Label[for*=item] {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  padding: 12px 0 14px 12px;
+}
+label.Label[for*=item]:active {
+  background-color: #ff8984;
+}
+
+.Food::after {
+  content: " ";
+}
+
+.Notes {
+  font-size: 11px;
+}
+.Notes::before {
+  content: "(";
+}
+.Notes::after {
+  content: ")";
+}
+
+.Button {
+  background-color: #4a4f56;
+  display: block;
+  width: 100%;
+  max-width: 534px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px 0;
+  color: #ff8984;
+}/*# sourceMappingURL=styles.css.map */

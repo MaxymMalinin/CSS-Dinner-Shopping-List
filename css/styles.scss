@@ -1,0 +1,141 @@
+@import "./variables";
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  background-color: $color-bg;
+  line-height: 1.1716;
+  color: $color-white;
+}
+
+.Header {
+  background-color: $color-bg-alt;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 19px;
+  padding-bottom: 12px;
+  text-align: center;
+  color: $color-accent;
+}
+
+.Heading {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.SubHeading {
+  font-size: 16px;
+  line-height: 1.171875;
+  margin-top: 4px;
+}
+
+.List {
+  margin-top: 20px;
+  max-width: 534px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &_item {
+    background-color: $color-violet;
+    transition: background-color 0.1s ease-in;
+    border-top: 3px solid $color-violet;
+    border-bottom: 3px solid $color-violet;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        z-index: calc(10 - $i);
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $color-violet-dark;
+      border-top: 3px solid $color-violet-dark;
+      border-bottom: 3px solid $color-violet-dark;
+    }
+
+    &:hover {
+      background-color: $color-violet-darkest;
+      border-color: $color-white;
+    }
+  }
+}
+
+.Checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 19px;
+  height: 19px;
+  margin-right: 16px;
+  background-color: $color-white;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &:checked {
+    background-image: url("../img/check.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+    & + .Food {
+      text-decoration: line-through 1px;
+      color: $color-violet-light;
+
+      & + .Notes {
+        text-decoration: line-through 1px;
+        color: $color-violet-light;
+      }
+    }
+  }
+}
+
+label.Label[for*="item"] {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  padding: 12px 0 14px 12px;
+
+  &:active {
+    background-color: $color-accent;
+  }
+}
+
+.Food {
+  &::after {
+    content: "\00a0";
+  }
+}
+
+.Notes {
+  font-size: 11px;
+
+  &::before {
+    content: "(";
+  }
+
+  &::after {
+    content: ")";
+  }
+}
+
+.Button {
+  background-color: $color-bg-alt;
+  display: block;
+  width: 100%;
+  max-width: 534px;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px 0;
+  color: $color-accent;
+}
